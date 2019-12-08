@@ -139,15 +139,18 @@ This part will be ignored while parsing.
 ```
 [!table]
 [[
-  - _:
+  -
+    -
     - First Header
     - Second Header
     - Third Header
-  - Line 1:
+  -
+    - Line 1
     - Content 1
     - Content 2
     - Content 3
-  - Line 2:
+  -
+    - Line 2
     - Content A
     - Content B
     - Content C
@@ -168,15 +171,18 @@ With the option `pivot` the definition of the table will be column-wise:
 ```
 [!table | pivot]
 [[
-  - _:
+  -
+    -
     - First Header
     - Second Header
     - Third Header
-  - Column 1:
+  -
+    - Column 1
     - Content 1
     - Content 2
     - Content 3
-  - Column 2:
+  -
+    - Column 2
     - Content A
     - Content B
     - Content C
@@ -190,9 +196,6 @@ First Header  | Content 1    | Content A    |
 Second Header | Content 2    | Content B    |
 Third Header  | Content 3    | Content C    |
 ```
-
-As seen in the examples above, the underline (`_`) can bee used to define an
-empty cell.  
 
 === Paragraph
 
