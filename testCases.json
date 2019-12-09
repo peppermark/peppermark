@@ -1,0 +1,348 @@
+[
+    {
+        "peppermark": "foo bar",
+        "ast": "",
+        "html": "<p>foo bar</p>",
+        "example": 1,
+        "description": "A definition without any markers is a simple paragraph",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "foo\n\nbar",
+        "ast": "",
+        "html": "<p>foo</p><p>bar</p>",
+        "example": 2,
+        "description": "Two paragraphs are separated by an empty line",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "foo\nbar\n\nbaz",
+        "ast": "",
+        "html": "<p>foo bar</p><p>baz</p>",
+        "example": 3,
+        "description": "Two paragraphs are separated by an empty line",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "foo\n\n\n\nbar",
+        "ast": "",
+        "html": "<p>foo</p><p>bar</p>",
+        "example": 4,
+        "description": "Multiple blank lines between paragraphs have no effect",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "   foo bar",
+        "ast": "",
+        "html": "<p>foo bar</p>",
+        "example": 5,
+        "description": "The raw content is  trimmed",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "foo bar    ",
+        "ast": "",
+        "html": "<p>foo bar</p>",
+        "example": 6,
+        "description": "The raw content is  trimmed",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "   foo bar    ",
+        "ast": "",
+        "html": "<p>foo bar</p>",
+        "example": 7,
+        "description": "The raw content is  trimmed",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "   foo    \n     bar    ",
+        "ast": "",
+        "html": "<p>foo bar</p>",
+        "example": 8,
+        "description": "Every line of the raw content is trimmed",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "   foo    \n\n     bar    ",
+        "ast": "",
+        "html": "<p>foo</p><p>bar</p>",
+        "example": 9,
+        "description": "Every line of the raw content is trimmed",
+        "section": "Paragraph"
+    },
+    {
+        "peppermark": "\n\t---\n",
+        "ast": "",
+        "html": "<hr>",
+        "example": 1,
+        "description": "Default case",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "---\n",
+        "ast": "",
+        "html": "<hr>",
+        "example": 2,
+        "description": "Can occur at the beginning of a file or input",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "\n---",
+        "ast": "",
+        "html": "<hr>",
+        "example": 3,
+        "description": "Can occur at the end of a file or input",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "---",
+        "ast": "",
+        "html": "<hr>",
+        "example": 4,
+        "description": "Can occur at the beginning and the end of a file or input",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": " ---",
+        "ast": "",
+        "html": "<hr>",
+        "example": 5,
+        "description": "Spaces before on the same line are permitted",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "       ---",
+        "ast": "",
+        "html": "<hr>",
+        "example": 6,
+        "description": "Spaces before on the same line are permitted",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "---------",
+        "ast": "",
+        "html": "<hr>",
+        "example": 7,
+        "description": "Can be built from more than three hyphens",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "--",
+        "ast": "",
+        "html": "<p>--</p>",
+        "example": 8,
+        "description": "Only two hypens are considered a paragraph",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "-- -",
+        "ast": "",
+        "html": "<p>-- -</p>",
+        "example": 9,
+        "description": "No whitespaces in between the hyphens are permitted",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "-- - ",
+        "ast": "",
+        "html": "<p>-- -</p>",
+        "example": 10,
+        "description": "No whitespaces in between the hyphens are permitted",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "paragraph\n\n---",
+        "ast": "",
+        "html": "<p>paragraph</p><hr>",
+        "example": 11,
+        "description": "An empty line must be before",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "---\n\nparagraph",
+        "ast": "",
+        "html": "<hr><p>paragraph</p>",
+        "example": 12,
+        "description": "An empty line must be after",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "paragraph\n\n---\n\nparagraph",
+        "ast": "",
+        "html": "<p>paragraph</p><hr><p>paragraph</p>",
+        "example": 13,
+        "description": "An empty line must be before and after",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "paragraph\n---\n\nparagraph",
+        "ast": "",
+        "html": "<p>paragraph ---</p><p>paragraph</p>",
+        "example": 14,
+        "description": "No empty line before will result in the attachment to the block before",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "paragraph\n\n---\nparagraph",
+        "ast": "",
+        "html": "<p>paragraph</p><p>--- paragraph</p>",
+        "example": 15,
+        "description": "No empty line after will result in the attachment to the block after",
+        "section": "ThematicBreak"
+    },
+    {
+        "peppermark": "paragraph\n---\nparagraph",
+        "ast": "",
+        "html": "<p>paragraph --- paragraph</p>",
+        "example": 16,
+        "description": "No empty lines before/after will result in the attachment to the block before/after",
+        "section": "ThematicBreak"
+    },
+
+
+    {
+        "peppermark": "= heading",
+        "ast": "",
+        "html": "<h1>heading</h1>",
+        "example": 1,
+        "description": "Heading level 1",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "== heading",
+        "ast": "",
+        "html": "<h2>heading</h2>",
+        "example": 2,
+        "description": "Heading level 2",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "=== heading",
+        "ast": "",
+        "html": "<h3>heading</h3>",
+        "example": 3,
+        "description": "Heading level 3",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "==== heading",
+        "ast": "",
+        "html": "<h4>heading</h4>",
+        "example": 4,
+        "description": "Heading level 4",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "===== heading",
+        "ast": "",
+        "html": "<h5>heading</h5>",
+        "example": 5,
+        "description": "Heading level 5",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "====== heading",
+        "ast": "",
+        "html": "<h6>heading</h6>",
+        "example": 6,
+        "description": "Heading level 6",
+        "section": "Heading"
+    },
+    {
+        "peppermark": " = heading",
+        "ast": "",
+        "html": "<h1>heading</h1>",
+        "example": 7,
+        "description": "Heading with initial space",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "foobar\n= heading",
+        "ast": "",
+        "html": "<p>foobar = heading</p>",
+        "example": 8,
+        "description": "No heading because of missing empty line before",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "= heading\nfoo\n\nbar",
+        "ast": "",
+        "html": "<h1>heading foo</h1><p>bar</p>",
+        "example": 9,
+        "description": "Next line is still part of heading",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "= heading\nfoo\nbar\n\nbaz",
+        "ast": "",
+        "html": "<h1>heading foo bar</h1><p>baz</p>",
+        "example": 10,
+        "description": "Next line is still part of heading",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "foo\n\n= heading\nbar\n\nbaz",
+        "ast": "",
+        "html": "<p>foo</p><h1>heading bar</h1><p>baz</p>",
+        "example": 11,
+        "description": "Separation between paragraphs and headings",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "=     heading",
+        "ast": "",
+        "html": "<h1>heading</h1>",
+        "example": 12,
+        "description": "Spaces between = and content",
+        "section": "Heading"
+    },
+    {
+        "peppermark": "|| blockquote",
+        "ast": "",
+        "html": "<blockquote><p>blockquote</p></blockquote>",
+        "example": 1,
+        "description": "",
+        "section": "Blockquote"
+    },
+    {
+        "peppermark": "||     blockquote",
+        "ast": "",
+        "html": "<blockquote><p>blockquote</p></blockquote>",
+        "example": 2,
+        "description": "",
+        "section": "Blockquote"
+    },
+    {
+        "peppermark": "||     blockquote  \nfoo",
+        "ast": "",
+        "html": "<blockquote><p>blockquote foo</p></blockquote>",
+        "example": 3,
+        "description": "",
+        "section": "Blockquote"
+    },
+    {
+        "peppermark": "||     blockquote  \n||  foo",
+        "ast": "",
+        "html": "<blockquote><p>blockquote foo</p></blockquote>",
+        "example": 4,
+        "description": "",
+        "section": "Blockquote"
+    },
+    {
+        "peppermark": "foo\n\n||     blockquote",
+        "ast": "",
+        "html": "<p>foo</p><blockquote><p>blockquote</p></blockquote>",
+        "example": 5,
+        "description": "",
+        "section": "Blockquote"
+    },
+    {
+        "peppermark": "||     blockquote\n\nfoo",
+        "ast": "",
+        "html": "<blockquote><p>blockquote</p></blockquote><p>foo</p>",
+        "example": 6,
+        "description": "",
+        "section": "Blockquote"
+    }
+]
