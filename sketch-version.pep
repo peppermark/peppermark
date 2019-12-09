@@ -1,4 +1,4 @@
-﻿= Peppermark
+= Peppermark
 
 == Introduction
 
@@ -77,7 +77,7 @@ characters are allowed.
 Headings start with 1 or more = characters followed by one strict space. The
 level 1 heading (the title) starts with =, section headings with ==, subheads
 with ===, and so on. The maximum nesting layer is limited to 6 headings. An
-empty line has to be before and after this elements and spaces in front of the
+empty line has to be before and after this element and spaces in front of the
 characters are NOT allowed.
 
 ```
@@ -201,8 +201,8 @@ Third Header  | Content 3    | Content C    |
 
 A sequence of non-blank lines that cannot be interpreted as other kinds of
 blocks forms a paragraph. The paragraph’s raw content is formed by
-concatenating the lines and removing initial and final whitespace. An empty line
-has to be before and after this elements.
+concatenating the lines and removing initial and final whitespace of every line. An empty line
+has to be before and after this element.
 
 == Container block
 
@@ -372,7 +372,7 @@ Title:      Peppermark Demo
 Author:     John Doe
 Date:       _
 Heroimage:  img/hero.png
-Tags:       
+Tags:
     - markup language
     - peppermark
     - demonstration
