@@ -26,7 +26,7 @@ some libraries even convert it to HTML (or another format) before processing it.
 With this project we want to tackle these main problems but most importantly
 define a format that works for our purposes.
 
-The biggest inspiration of this project is of couse markdown. Other Markup
+The biggest inspiration of this project is of course markdown. Other Markup
 languages that shaped this specification in any form are listed below:
 
 - Creole
