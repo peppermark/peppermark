@@ -410,3 +410,9 @@ happen inline:
 - Registered (R)
 - Copyright (C)
 - Non-breaking~space
+
+== Other links
+
+These links might relate to the specification or implementation of Peppermark:
+
+- Example of using SugarJ: [http://lclnet.nl/publications/editor-libraries-demo.pdf]
